@@ -7,12 +7,7 @@ from src.kpi_analysis import top_job_categories
 
 def test_top_job_categories():
 
-    spark = (
-        SparkSession.builder
-        .master("local[1]")
-        .appName("test")
-        .getOrCreate()
-    )
+    spark = SparkSession.builder.master("local[1]").appName("test").getOrCreate()
 
     # sample job category data
     data = [("IT",), ("IT",), ("HR",)]

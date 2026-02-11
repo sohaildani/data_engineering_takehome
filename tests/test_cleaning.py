@@ -6,12 +6,7 @@ from src.data_cleaning import create_avg_salary
 
 def test_create_avg_salary():
 
-    spark = (
-        SparkSession.builder
-        .master("local[1]")
-        .appName("test")
-        .getOrCreate()
-    )
+    spark = SparkSession.builder.master("local[1]").appName("test").getOrCreate()
 
     data = [(10000.0, 20000.0)]
     columns = ["Salary Range From", "Salary Range To"]
