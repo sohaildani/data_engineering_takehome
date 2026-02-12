@@ -23,7 +23,7 @@ def remove_invalid_salary(df: DataFrame) -> DataFrame:
     
     logger.info("Removing invalid salary records")
 
-    df = df.filter(col("Salary Range From").isNotNull()) & (col("Salary Range To").isNotNull()) & (col("Salary Range To") >= col("Salary Range From"))
+    df = df.filter((col("Salary Range From").isNotNull()) & (col("Salary Range To").isNotNull()) & (col("Salary Range To") >= col("Salary Range From")))
 
     return df
 
